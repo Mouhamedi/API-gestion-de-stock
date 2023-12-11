@@ -1,0 +1,29 @@
+package com.gestionstock.Gestion.de.stock.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "lignecommandeclient")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class LigneCommandeClient extends AbstractEntity{
+
+    @ManyToOne
+    @JoinColumn(name = "idarticle")
+    private Article article;
+
+    @ManyToOne
+    @JoinColumn(name = "idcommandeclient")
+    private CommandeClient commandeClient;
+
+    @Column(name = "quantite")
+    private BigDecimal quantite;
+
+    @Column(name = "prixunitaire")
+    private BigDecimal prixUnitaire;
+}
