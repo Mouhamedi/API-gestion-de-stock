@@ -1,6 +1,6 @@
 package com.gestionstock.Gestion.de.stock.dto;
 
-import com.gestionstock.Gestion.de.stock.model.Client;
+
 import com.gestionstock.Gestion.de.stock.model.CommandeClient;
 import lombok.Builder;
 import lombok.Data;
@@ -30,7 +30,7 @@ public class CommandeClientDto {
                 .id(commandeClient.getId())
                 .code(commandeClient.getCode())
                 .dateCommande(commandeClient.getDateCommande())
-                //.client(commandeClient.getClient())
+                .client(ClientDto.fromEntity(commandeClient.getClient()))
                 .build();
 
     }
@@ -42,7 +42,7 @@ public class CommandeClientDto {
         commandeClient.setId(commandeClientDto.getId());
         commandeClient.setCode(commandeClientDto.getCode());
         commandeClient.setDateCommande(commandeClientDto.getDateCommande());
-        //commandeClient.setClient(commandeClientDto.getClient());
+        commandeClient.setClient(ClientDto.toEntity(commandeClientDto.getClient()));
 
         return commandeClient;
     }

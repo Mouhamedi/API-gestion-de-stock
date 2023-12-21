@@ -28,6 +28,7 @@ public class LigneCommandeClientDto {
         return LigneCommandeClientDto.builder()
                 .quantite(ligneCommandeClient.getQuantite())
                 .prixUnitaire(ligneCommandeClient.getPrixUnitaire())
+                .commandeClient(CommandeClientDto.fromEntity(ligneCommandeClient.getCommandeClient()))
                 .build();
 
     }
@@ -38,6 +39,7 @@ public class LigneCommandeClientDto {
         LigneCommandeClient ligneCommandeClient = new LigneCommandeClient();
         ligneCommandeClient.setQuantite(ligneCommandeClientDto.getQuantite());
         ligneCommandeClient.setPrixUnitaire(ligneCommandeClientDto.getPrixUnitaire());
+        ligneCommandeClient.setCommandeClient(CommandeClientDto.toEntity(ligneCommandeClientDto.getCommandeClient()));
 
         return ligneCommandeClient;
     }

@@ -26,6 +26,9 @@ public class Utilisateur extends Article{
     @Column(name = "email")
     private String email;
 
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
+
     @Column(name = "dateDeNaissance")
     private Instant dateDeNaissance;
 

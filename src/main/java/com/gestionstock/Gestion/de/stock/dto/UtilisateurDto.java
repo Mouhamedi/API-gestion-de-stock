@@ -57,6 +57,7 @@ public class UtilisateurDto {
                 .codePostale(utilisateur.getCodePostale())
                 .pays(utilisateur.getPays())
                 .photo(utilisateur.getPhoto())
+                .entreprise(EntrepriseDto.fromEntity(utilisateur.getEntreprise()))
                 .build();
     }
     public static Utilisateur toEntity(UtilisateurDto utilisateurDto){
@@ -76,6 +77,7 @@ public class UtilisateurDto {
         utilisateur.setPays(utilisateurDto.getPays());
         utilisateur.setEmail(utilisateurDto.getEmail());
         utilisateur.setPhoto(utilisateurDto.getPhoto());
+        utilisateur.setEntreprise(EntrepriseDto.toEntity(utilisateurDto.getEntreprise()));
 
         return utilisateur;
     }

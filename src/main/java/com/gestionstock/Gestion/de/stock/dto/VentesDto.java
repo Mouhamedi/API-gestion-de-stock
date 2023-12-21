@@ -1,11 +1,12 @@
 package com.gestionstock.Gestion.de.stock.dto;
 
-import com.gestionstock.Gestion.de.stock.model.CommandeClient;
+
 import com.gestionstock.Gestion.de.stock.model.Ventes;
 import lombok.Builder;
 import lombok.Data;
 
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @Builder
@@ -19,6 +20,8 @@ public class VentesDto {
 
     private String commentaire;
 
+    private List<LigneVentesDto> ligneventes;
+
     public static VentesDto fromEntity(Ventes ventes){
         if (ventes==null){
             return  null;
@@ -28,7 +31,6 @@ public class VentesDto {
                 .code(ventes.getCode())
                 .dateVente(ventes.getDateVente())
                 .commentaire(ventes.getCommentaire())
-                //.client(commandeClient.getClient())
                 .build();
 
     }
@@ -41,7 +43,6 @@ public class VentesDto {
         ventes.setCode(ventesDto.getCode());
         ventes.setDateVente(ventesDto.getDateVente());
         ventes.setCommentaire(ventesDto.getCommentaire());
-        //commandeClient.setClient(commandeClientDto.getClient());
 
         return ventes;
     }

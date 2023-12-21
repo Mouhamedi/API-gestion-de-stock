@@ -1,6 +1,5 @@
 package com.gestionstock.Gestion.de.stock.dto;
 
-import com.gestionstock.Gestion.de.stock.model.LigneCommandeFournisseur;
 import com.gestionstock.Gestion.de.stock.model.LigneVentes;
 import lombok.Builder;
 import lombok.Data;
@@ -9,7 +8,7 @@ import java.math.BigDecimal;
 
 @Data
 @Builder
-public class LigneventesDto {
+public class LigneVentesDto {
 
     private  Integer id;
 
@@ -19,18 +18,19 @@ public class LigneventesDto {
 
     private BigDecimal prixUnitaire;
 
-    public static LigneventesDto fromEntity(LigneVentes ligneVentes){
+    public static LigneVentesDto fromEntity(LigneVentes ligneVentes){
         if (ligneVentes==null){
             return  null;
         }
-        return LigneventesDto.builder()
+        return LigneVentesDto.builder()
                 .id(ligneVentes.getId())
                 .quantite(ligneVentes.getQuantite())
                 .prixUnitaire(ligneVentes.getPrixUnitaire())
+                .vente(VentesDto.fromEntity(ligneVentes.getVente()))
                 .build();
 
     }
-    public static LigneVentes toEntity(LigneventesDto ligneventesDto){
+    public static LigneVentes toEntity(LigneVentesDto ligneventesDto){
         if (ligneventesDto==null){
             return  null;
         }
@@ -38,6 +38,7 @@ public class LigneventesDto {
         ligneVentes.setId(ligneventesDto.getId());
         ligneVentes.setQuantite(ligneventesDto.getQuantite());
         ligneVentes.setPrixUnitaire(ligneventesDto.getPrixUnitaire());
+        ligneVentes.setVente(VentesDto.toEntity(ligneventesDto.getVente()));
 
         return ligneVentes;
     }

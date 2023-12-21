@@ -24,6 +24,9 @@ public class CommandeClient extends AbstractEntity{
     @JoinColumn(name = "idclient")
     private  Client client;
 
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
+
     @OneToMany(mappedBy = "commandeClient")
     private List<LigneCommandeClient> ligneCommandeClients;
 

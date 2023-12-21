@@ -3,6 +3,7 @@ package com.gestionstock.Gestion.de.stock.dto;
 
 import com.gestionstock.Gestion.de.stock.model.Article;
 import com.gestionstock.Gestion.de.stock.model.Category;
+import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
 import java.math.BigDecimal;
@@ -27,6 +28,9 @@ public class ArticleDto {
 
     private CategoryDto category;
 
+
+    private Integer idEntreprise;
+
     public static ArticleDto fromEntity(Article article){
         if (article==null){
             return  null;
@@ -38,6 +42,7 @@ public class ArticleDto {
                 .prixUnitaireHt(article.getPrixUnitaireHt())
                 .prixUnitaireTte(article.getPrixUnitaireTte())
                 .photo(article.getPhoto())
+                .idEntreprise(article.getId())
                 .category(CategoryDto.fromEntity(article.getCategory()))
                 .build();
     }
@@ -51,8 +56,9 @@ public class ArticleDto {
         article.setDesignation(articleDto.getDesignation());
         article.setPrixUnitaireHt(articleDto.getPrixUnitaireHt());
         article.setPrixUnitaireTte(articleDto.getPrixUnitaireTte());
+        article.setIdEntreprise(articleDto.getIdEntreprise());
         article.setPhoto(articleDto.getPhoto());
-       // article.setCategory(CategoryDto.fromEntity(articleDto.getCategory());
+        article.setCategory(CategoryDto.toEntity(articleDto.getCategory()));
 
         return article;
     }

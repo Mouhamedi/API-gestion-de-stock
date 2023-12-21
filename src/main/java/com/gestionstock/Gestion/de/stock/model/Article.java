@@ -4,8 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
-  //permet de construire des objet avec des methode de meme nom
+//permet de construire des objet avec des methode de meme nom
 @Entity
 @Table(name = "article")
 @Data
@@ -27,6 +28,9 @@ public class Article extends AbstractEntity {
     @Column(name = "tauxTva")
     private BigDecimal tauxTVA;
 
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
+
 
     @Column(name = "prixunitairette")
     private BigDecimal prixUnitaireTte;
@@ -37,4 +41,14 @@ public class Article extends AbstractEntity {
    @ManyToOne
     @JoinColumn(name = "idcategory")
     private Category category;
+
+   @OneToMany(mappedBy = "article")
+   private List<LigneVentes> ligneVentes;
+
+    @OneToMany(mappedBy = "article")
+   private List<LigneCommandeClient> ligneCommandeClients;
+
+    @OneToMany(mappedBy = "article")
+   private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+
 }

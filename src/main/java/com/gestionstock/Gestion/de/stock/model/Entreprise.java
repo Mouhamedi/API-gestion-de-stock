@@ -24,6 +24,9 @@ public class Entreprise extends AbstractEntity{
     @Column(name = "description")
     private String description;
 
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
+
     @Column(name = "telephone")
     private String telephone;
 

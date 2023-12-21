@@ -24,6 +24,9 @@ public class MvtStck extends AbstractEntity{
     @JoinColumn(name = "idarticle")
     private Article article;
 
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
+
     @Column(name = "typemvt")
     private TypeMvtStck typeMvtStck;
 }
