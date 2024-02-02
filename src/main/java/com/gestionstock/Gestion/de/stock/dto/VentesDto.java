@@ -20,7 +20,7 @@ public class VentesDto {
 
     private String commentaire;
 
-    private List<LigneVentesDto> ligneventes;
+    private List<LigneVentesDto> ligneVentesDto;
 
     public static VentesDto fromEntity(Ventes ventes){
         if (ventes==null){

@@ -10,7 +10,7 @@ public interface VentesService {
 
     VentesDto findById(Integer id);
 
-    VentesDto findByCodeArticle(String codeArticle);
+    VentesDto findByCode(String code);
 
     List<VentesDto> findAll();
 

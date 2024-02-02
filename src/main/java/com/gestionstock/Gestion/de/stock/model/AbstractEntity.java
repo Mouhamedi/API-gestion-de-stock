@@ -1,11 +1,7 @@
 package com.gestionstock.Gestion.de.stock.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
-import lombok.Builder;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +9,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
@@ -27,11 +24,21 @@ public class AbstractEntity implements Serializable {
     @GeneratedValue
     private  Integer id;
 
-    @CreatedDate
-    @JsonIgnore
+    //@CreatedDate
+    @Column(name ="creationDate" )
     private Instant creationDate;
 
-    @LastModifiedDate
-    @JsonIgnore
+    //@LastModifiedDate
+    @Column(name ="lastModifieDate" )
     private Instant lastModifieDate;
+
+    @PrePersist
+    void prePersist() {
+        creationDate = Instant.now();
+    }
+
+    @PreUpdate
+    void preUpdate() {
+        lastModifieDate = Instant.now();
+    }
 }

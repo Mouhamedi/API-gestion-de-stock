@@ -1,6 +1,5 @@
 package com.gestionstock.Gestion.de.stock.dto;
 
-import com.gestionstock.Gestion.de.stock.model.LigneVentes;
 import com.gestionstock.Gestion.de.stock.model.MvtStck;
 import com.gestionstock.Gestion.de.stock.model.TypeMvtStck;
 import lombok.Builder;

@@ -20,7 +20,7 @@ public class UtilisateurDto {
 
     private String telephone;
 
-    private String email;
+    private String mail;
 
     private Instant dateDeNaissance;
 
@@ -49,7 +49,7 @@ public class UtilisateurDto {
                 .nom(utilisateur.getNom())
                 .prenom(utilisateur.getPrenom())
                 .telephone(utilisateur.getTelephone())
-                .email(utilisateur.getEmail())
+                .mail(utilisateur.getMail())
                 .dateDeNaissance(utilisateur.getDateDeNaissance())
                 .motDePasse(utilisateur.getMotDePasse())
                 .adresse(utilisateur.getAdresse())
@@ -75,7 +75,7 @@ public class UtilisateurDto {
         utilisateur.setVille(utilisateurDto.getVille());
         utilisateur.setCodePostale(utilisateurDto.getCodePostale());
         utilisateur.setPays(utilisateurDto.getPays());
-        utilisateur.setEmail(utilisateurDto.getEmail());
+        utilisateur.setMail(utilisateurDto.getMail());
         utilisateur.setPhoto(utilisateurDto.getPhoto());
         utilisateur.setEntreprise(EntrepriseDto.toEntity(utilisateurDto.getEntreprise()));
 

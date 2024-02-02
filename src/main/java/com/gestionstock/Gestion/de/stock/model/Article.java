@@ -1,6 +1,7 @@
 package com.gestionstock.Gestion.de.stock.model;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -28,7 +29,7 @@ public class Article extends AbstractEntity {
     @Column(name = "tauxTva")
     private BigDecimal tauxTVA;
 
-    @Column(name = "idEntreprise")
+    @Column(name = "idEntrepriseA")
     private Integer idEntreprise;
 
 

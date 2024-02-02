@@ -1,7 +1,9 @@
 package com.gestionstock.Gestion.de.stock.model;
 
-import jakarta.persistence.*;
+
 import lombok.*;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "role")

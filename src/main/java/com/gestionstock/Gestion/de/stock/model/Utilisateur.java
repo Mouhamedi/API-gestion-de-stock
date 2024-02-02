@@ -1,8 +1,9 @@
 package com.gestionstock.Gestion.de.stock.model;
 
-import jakarta.persistence.*;
+
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.List;
 
@@ -23,11 +24,8 @@ public class Utilisateur extends Article{
     private String telephone;
 
 
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "idEntreprise")
-    private Integer idEntreprise;
+    @Column(name = "mail")
+    private String mail;
 
     @Column(name = "dateDeNaissance")
     private Instant dateDeNaissance;

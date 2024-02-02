@@ -47,7 +47,7 @@ public class UtilisateurValidator {
         if (!StringUtils.hasLength(utilisateurDto.getCodePostale())){
             errors.add("Veuillez entrer le code postal d'utilisateur");
         }
-        if (!StringUtils.hasLength(utilisateurDto.getEmail())){
+        if (!StringUtils.hasLength(utilisateurDto.getMail())){
             errors.add("Veuillez entrer le mail d'utilisateur");
         }
         return errors;

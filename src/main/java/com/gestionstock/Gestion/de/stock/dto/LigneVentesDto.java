@@ -1,5 +1,6 @@
 package com.gestionstock.Gestion.de.stock.dto;
 
+import com.gestionstock.Gestion.de.stock.model.Article;
 import com.gestionstock.Gestion.de.stock.model.LigneVentes;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +18,8 @@ public class LigneVentesDto {
     private BigDecimal quantite;
 
     private BigDecimal prixUnitaire;
+
+    private Article article;
 
     public static LigneVentesDto fromEntity(LigneVentes ligneVentes){
         if (ligneVentes==null){

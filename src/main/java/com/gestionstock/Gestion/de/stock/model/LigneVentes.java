@@ -1,8 +1,9 @@
 package com.gestionstock.Gestion.de.stock.model;
 
-import jakarta.persistence.*;
+
 import lombok.*;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -25,4 +26,8 @@ public class LigneVentes extends AbstractEntity{
 
     @Column(name = "prixunitaire")
     private BigDecimal prixUnitaire;
+
+    @ManyToOne
+    @JoinColumn(name = "article_id")
+    private Article article;
 }
