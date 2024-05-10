@@ -4,7 +4,7 @@ import com.gestionstock.Gestion.de.stock.dto.ArticleDto;
 
 import java.util.List;
 
-public interface ArticleService {
+public interface  ArticleService {
 
     ArticleDto save(ArticleDto articleDto);
 

@@ -41,8 +41,6 @@ public class ArticleServiceImpl implements ArticleService {
         return ArticleDto.fromEntity(articleRepository.save(ArticleDto.toEntity(articleDto)));
     }
 
-
-
     @Override
     public ArticleDto findById(Integer id) {
         if (id == null){

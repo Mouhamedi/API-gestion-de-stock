@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.gestionstock.Gestion.de.stock.utils.Constants.APP_ROOT;
 
-@Api(APP_ROOT + "/fournisseur")
+@Api(APP_ROOT + "/fournisseurs")
 public interface FournisseurControllerApi {
 
     @PostMapping(value = APP_ROOT + "/fournisseur/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
