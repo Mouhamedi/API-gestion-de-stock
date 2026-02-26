@@ -13,17 +13,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static com.gestionstock.Gestion.de.stock.utils.Constants.APP_ROOT;
 
 @Configuration
-//@EnableSwagger2
+@EnableSwagger2
 public class SwaggerConfiguration {
 
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(
-                   new ApiInfoBuilder()
-                     .description("Gestion de stock API documentation")
-                     .title("gestion de stock REST V1")
-                     .build()
+                        new ApiInfoBuilder()
+                                .description("Gestion de stock API documentation")
+                                .title("gestion de stock REST V1")
+                                .build()
                 )
                 .groupName("REST API V1")
                 .select()

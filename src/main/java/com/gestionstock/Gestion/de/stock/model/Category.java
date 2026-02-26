@@ -13,6 +13,8 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class Category extends AbstractEntity{
 
+
+
     @Column(name = "code")
     private String code;
 

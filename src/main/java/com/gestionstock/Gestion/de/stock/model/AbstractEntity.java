@@ -20,6 +20,7 @@ import java.time.Instant;
 @EntityListeners(AuditingEntityListener.class) // premet de mettre à jour les champ de date dans la base de donnée.
 public class AbstractEntity implements Serializable {
 
+
     @Id
     @GeneratedValue
     private  Integer id;

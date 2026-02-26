@@ -17,6 +17,7 @@ public class CategoryDto {
     private String designation;
 
     private List<ArticleDto> articles;
+    private List<EntrepriseDto> entreprises;
 
     public static CategoryDto fromEntity(Category category){
         if (category==null){
