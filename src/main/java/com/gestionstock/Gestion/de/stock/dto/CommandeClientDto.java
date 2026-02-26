@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @Builder
 public class CommandeClientDto {
-
+// les attributs pour client
     private  Integer id;
 
     private String code;
